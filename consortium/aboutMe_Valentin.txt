@@ -1,0 +1,17 @@
+Expectation toward myself: 
+	- hand in quality work on time
+	- give my best effort, always
+
+Knowledge:
+	- I know the syntax(somewhat): PHP, LaTex, 
+	- can work with: HTML, CSS, JavaScript, SQL
+	- most familiar: Java, C#, C++
+	- never used, but willing to learn: web-socket
+	- theory basics in: JSON, XML, AJAX, AJAJ, DOM, 
+	- capable of working in OO or structured programming approaches
+	- large spectrum of knowledge in different fields of computer science
+	- solid mathematical basis
+	- performance efficient coding policies (if required)
+	- commented code
+	- familiar with design patterns (MVC, MVVM, gang of four patterns)
+	- creativity
