@@ -147,7 +147,7 @@ playTurn = function(playCardClass = "computer", index = -1){
   addClass(spaceToThrowCard[0],"thrown");
   removeClass(spaceToThrowCard[0], "firstEmptySpace");
 
-  cards[index].src = "../media/pictures/pic.jpg";
+  cards[index].src = "media/pictures/pic.jpg";
 
   addClass(cards[index], "addCard");
   removeClass(cards[index], "playCard");
@@ -238,7 +238,7 @@ deckCardPull = function(){
   if(briscolaPlay.cardsLeft == 1){
     var deckCard = document.getElementsByClassName("deckCard");
     for(var i = 0; i < deckCard.length; i++){
-      deckCard[i].src = "../media/pictures/pic.jpg";
+      deckCard[i].src = "media/pictures/pic.jpg";
     }
   }
   if(briscolaPlay.onTurn){
@@ -250,7 +250,7 @@ deckCardPull = function(){
   //remove it from the deck
   if(briscolaPlay.cardsLeft == 0){
     var briscola = document.getElementById("briscola");
-    briscola.src = "../media/pictures/pic.jpg";
+    briscola.src = "media/pictures/pic.jpg";
   }
 }
 
@@ -380,7 +380,7 @@ sumCards = function(){
       addPlayCardsListeners();
       var thrownCards = document.getElementsByClassName("thrown");
       while(thrownCards.length > 0){
-        thrownCards[0].src = "../media/pictures/pic.jpg";
+        thrownCards[0].src = "media/pictures/pic.jpg";
         thrownCards[0].removeAttribute("name");
         briscolaPlay.cardsOnTable[parseInt(thrownCards[0].alt)-1] = -1;
         removeClass(thrownCards[0], "thrown");
@@ -611,7 +611,7 @@ continueGame = function(){
         card[i].addEventListener('click', playCardEventWrapper, false);
         compCardsInHand ++;
     } else {
-      card[i].src = "../media/pictures/pic.jpg";
+      card[i].src = "media/pictures/pic.jpg";
       addClass(card[i],"addCard");
       removeClass(card[i],"playCard");
     }
@@ -628,7 +628,7 @@ continueGame = function(){
         addClass(card[i],"playCard");
 
     } else {
-      card[i].src = "../media/pictures/pic.jpg";
+      card[i].src = "media/pictures/pic.jpg";
       addClass(card[i],"addCard");
       removeClass(card[i],"playCard");
     }

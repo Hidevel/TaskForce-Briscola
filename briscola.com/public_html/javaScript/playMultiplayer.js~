@@ -720,7 +720,7 @@ continueGame = function(){
         addClass(card[i],"playCard");
 
     } else {
-      card[i].src = "media/pictures/pic.jpg";
+      card[i].src = "../media/pictures/pic.jpg";
       addClass(card[i],"addCard");
       removeClass(card[i],"playCard");
     }
@@ -809,7 +809,7 @@ function setMultiplayer(){
           card[i].src = briscolaPlay.cardsPath+ briscolaPlay.hisCards[i]+".jpg";
           card[i].addEventListener('click', playCardEventWrapper, false);
       } else {
-        card[i].src = "media/pictures/pic.jpg";
+        card[i].src = "../media/pictures/pic.jpg";
         addClass(card[i],"addCard");
         removeClass(card[i],"playCard");
       }
@@ -825,7 +825,7 @@ function setMultiplayer(){
           addClass(card[i],"playCard");
 
       } else {
-        card[i].src = "media/pictures/pic.jpg";
+        card[i].src = "../media/pictures/pic.jpg";
         addClass(card[i],"addCard");
         removeClass(card[i],"playCard");
       }
