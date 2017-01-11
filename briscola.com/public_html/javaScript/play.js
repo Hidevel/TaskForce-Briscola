@@ -64,16 +64,294 @@ computerChose = function() {
 computerChoseAI1 = function() {
   var cards = briscolaPlay.hisCards.reduce(function(a, v, i) { if (v!==-1) a.push(i); return a; }, []);
   console.log(cards);
-  /////THIS IS THE FUNCTION TO CHANGE TO
-  ///////CHANGE HOW WILL THE COMPUTER PLAY
+  var leadingSuit = briscolaPlay.getBriscolaCard();
+  var first = [-2,-2]; 
+  var second = [-3,-3];
+  
+  if(briscolaPlay.cardsOnTable() == [-1,-1]){
+	  	for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(0 || 1 || 2 || 3 || 4) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(0 || 1 || 2 || 3 || 4) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(5 || 5 || 7 ) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(5 || 5 || 7 ) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(8) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(8) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(9) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(9) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+
+	return cards[getRandomInt(0,cards.length)]; 	  
+	}
+	else{
+		var enemyCard = briscolaPlay.cardsOnTable();
+		if(Math.floor(enemyCard%10)==(9) && Math.floor(enemyCard/10)!=leadingSuit){
+			for(var i=0; i<cards.length; i++){
+				if(Math.floor(card[i]/10)==leadingSuit){
+				return card[i];
+				}
+			}
+		}
+		if(Math.floor(enemyCard%10)==(8) && Math.floor(enemyCard/10)!=leadingSuit){
+			for(var i=0; i<cards.length; i++){
+				if(Math.floor(card[i]/10)==leadingSuit || (card[i]%10==9 && Math.floor(card[i]/10)==Math.floor(enemyCard/10))){
+				return card[i];
+				}
+			}
+		}
+		return cards[getRandomInt(0,cards.length)]; 
+	}
+  if(briscolaPlay.cardsOnTable() == first){
+	if(foecardWorth == 10 && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return card[i];
+		}
+	}
+	if(foecardWorth == 10 && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardWorth == 11 && cardSuit == foeCardSuit)
+				return cards[i];
+		}
+	}
+		if(foecardWorth == 10 && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == 11 && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardSuit == leadingSuit)
+				return cards[i];
+		}
+	}
+	if(foecardWorth == 11 && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == 11 && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardWorth == (10 || 11) && cardSuit == foeCardSuit)
+				return cards[i];
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardWorth == (10 || 11) && cardSuit == foeCardSuit)
+				return cards[i];	
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardSuit == leadingSuit)
+				return cards[i];
+		}
+	}
+  return cards[getRandomInt(0,cards.length)]; 
+  }
+  if(briscolaPlay.cardsOnTable() == second){
+	  	if(cardWorth == 0 && cardSuit != leadingSuit)
+			return card;
+		if(cardWorth == (2 || 3) && cardSuit != leadingSuit)
+			return card;
+		if(cardWorth == 0 && cardSuit == leadingSuit)
+			return card;
+		if(cardWorth == (4) && cardSuit != leadingSuit)
+			return card;
+		if(cardWorth == (2 || 3 || 4) && cardSuit == leadingSuit)
+			return card;
+		if(cardWorth == (10 || 11) && cardSuit == leadingSuit)
+			return card;
+		if(cardWorth == (10 || 11) && cardSuit != leadingSuit)
+			return card;
+		return cards[getRandomInt(0,cards.length)]; 
+  }
   return cards[getRandomInt(0,cards.length)];
 }
 
 computerChoseAI2 = function() {
   var cards = briscolaPlay.hisCards.reduce(function(a, v, i) { if (v!==-1) a.push(i); return a; }, []);
   console.log(cards);
-  /////THIS IS THE FUNCTION TO CHANGE TO
-  ///////CHANGE HOW WILL THE COMPUTER PLAY
+  var leadingSuit = briscolaPlay.getBriscolaCard();
+  var first = [-2,-2]; 
+  var second = [-3,-3];
+  
+  if(briscolaPlay.cardsOnTable() == [-1,-1]){
+	  	for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(0 || 1 || 2 || 3 || 4) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(0 || 1 || 2 || 3 || 4) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(5 || 5 || 7 ) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(5 || 5 || 7 ) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(8) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(8) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(9) && Math.floor(card[i]/10)==leadingSuit){
+			return card[i];
+			}
+		}
+		for(var i=0; i<cards.length; i++){
+			if(Math.floor(card[i]%10)==(9) && Math.floor(card[i]/10)!=leadingSuit){
+			return card[i];
+			}
+		}
+
+	return cards[getRandomInt(0,cards.length)]; 	  
+	}
+	else{
+		var enemyCard = briscolaPlay.cardsOnTable();
+		if(Math.floor(enemyCard%10)==(9) && Math.floor(enemyCard/10)!=leadingSuit){
+			for(var i=0; i<cards.length; i++){
+				if(Math.floor(card[i]/10)==leadingSuit){
+				return card[i];
+				}
+			}
+		}
+		if(Math.floor(enemyCard%10)==(8) && Math.floor(enemyCard/10)!=leadingSuit){
+			for(var i=0; i<cards.length; i++){
+				if(Math.floor(card[i]/10)==leadingSuit || (card[i]%10==9 && Math.floor(card[i]/10)==Math.floor(enemyCard/10))){
+				return card[i];
+				}
+			}
+		}
+		return cards[getRandomInt(0,cards.length)]; 
+	}
+  if(briscolaPlay.cardsOnTable() == first){
+	if(foecardWorth == 10 && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return card[i];
+		}
+	}
+	if(foecardWorth == 10 && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardWorth == 11 && cardSuit == foeCardSuit)
+				return cards[i];
+		}
+	}
+		if(foecardWorth == 10 && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == 11 && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardSuit == leadingSuit)
+				return cards[i];
+		}
+	}
+	if(foecardWorth == 11 && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == 11 && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardWorth == (10 || 11) && cardSuit == foeCardSuit)
+				return cards[i];
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit == leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			return cards[i];
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardWorth == (10 || 11) && cardSuit == foeCardSuit)
+				return cards[i];	
+		}
+	}
+	if(foecardWorth == (2 || 3 || 4) && foeCardSuit != leadingSuit){
+		for(var i=0; i<cards.length; i++){
+			if(cardSuit == leadingSuit)
+				return cards[i];
+		}
+	}
+  return cards[getRandomInt(0,cards.length)]; 
+  }
+  if(briscolaPlay.cardsOnTable() == second){
+	  	if(cardWorth == 0 && cardSuit != leadingSuit)
+			return card;
+		if(cardWorth == (2 || 3) && cardSuit != leadingSuit)
+			return card;
+		if(cardWorth == 0 && cardSuit == leadingSuit)
+			return card;
+		if(cardWorth == (4) && cardSuit != leadingSuit)
+			return card;
+		if(cardWorth == (2 || 3 || 4) && cardSuit == leadingSuit)
+			return card;
+		if(cardWorth == (10 || 11) && cardSuit == leadingSuit)
+			return card;
+		if(cardWorth == (10 || 11) && cardSuit != leadingSuit)
+			return card;
+		return cards[getRandomInt(0,cards.length)]; 
+  }
   return cards[getRandomInt(0,cards.length)];
 }
 
@@ -98,6 +376,14 @@ overed.
       Valid indexes are 0-2
       If < 0, the random card is played by computer side.
 */
+var cardSuit=5;
+var cardPower=12;
+var cardWorth=20;
+var leadingSuit=6;
+var foeCard = 51;
+var foecardPower = 13;
+var foeCardSuit = 4;
+var foeCardWorth = 21;
 playTurn = function(playCardClass = "computer", index = -1){
   if(playCardClass !== "computer" && playCardClass !== "player playCard"){
     roundOverFunction();
