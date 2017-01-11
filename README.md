@@ -1,6 +1,7 @@
 # TaskForce-Briscola
 The application can be downloaded and used internally.
-When the download finishes, just double-click the index.html file to start.
+Download the briscola.com folder.
+When the download finishes, just double-click the index.html file placed inside to open an application.
 
 Everything will work flawlessly despite the player vs player part.
 To manage this work as well, you need to create an localhost on your computer.
