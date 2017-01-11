@@ -1,4 +1,4 @@
-/****************************** ZAJEDNIČKO **********************************/
+﻿/****************************** ZAJEDNIČKO **********************************/
 * {
   margin: 0;
   padding: 0;
@@ -140,4 +140,24 @@ img.cardImg{ /**35:68 ration*/
   /*-ms-transform: rotate(90deg); /* IE 9 */
   /*-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
   /*transform: rotate(90deg);*/
+}
+
+.hideOpponentsCard{
+	display:inline-flex;
+	position:relative;
+	max-height:100%;
+	max-width:100%;
+}
+
+#hideOppennetsCardDiv{
+	position:absolute;
+	z-index:10;
+	display: inline-flex;
+	margin:0;
+	border-radius: 10%;
+    width: 38%;
+	height: 31.66vh;
+}
+#hideOppennetsCardDiv > div{
+	margin-left:0;
 }
