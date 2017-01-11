@@ -104,6 +104,7 @@ img.cardImg{ /**35:68 ration*/
   max-width: 100%;
   max-height: 100%;
   color: transparent;
+  z-index:-5;
 }
 
 .secondRow .center .card1{
@@ -142,22 +143,6 @@ img.cardImg{ /**35:68 ration*/
   /*transform: rotate(90deg);*/
 }
 
-.hideOpponentsCard{
-	display:inline-flex;
-	position:relative;
-	max-height:100%;
-	max-width:100%;
-}
-
-#hideOppennetsCardDiv{
-	position:absolute;
-	z-index:10;
-	display: inline-flex;
-	margin:0;
-	border-radius: 10%;
-    width: 38%;
-	height: 31.66vh;
-}
-#hideOppennetsCardDiv > div{
-	margin-left:0;
+.hideOpponentsCardDiv{
+	display:none;
 }
